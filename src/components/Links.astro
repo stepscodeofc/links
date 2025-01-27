@@ -1,34 +1,29 @@
 ---
-const { target, rel, link, icon, style } = Astro.props
-
-export const targetExternal = "_blank"
-export const relExternal = "noopener"
-
-export const targetInternal = "_parent"
-export const relInternal = "self"
+import "../styles/links.css"
+const { target, rel, link, icon, title, style } = Astro.props
 ---
 
-<a target={target} rel={rel} href={link} style={style}><i class={icon}></i> <slot/></a>
+<a target={target} rel={rel} href={link} style={style}><i class={icon}></i> {title}</a>
 
 <style>
-  a {
-    background-color: #FFFFFF;
-    font-size: 20px;
-    border-radius: 10px;
-    padding: 10px;
-    display: block;
-    text-align: center;
-    margin: 10px;
-    width: 40vw;
-    color: #171810;
-    text-decoration: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.5s ease;
-  }
+a {
+  background-color: #FFFFFF;
+  font-size: 20px;
+  border-radius: 10px;
+  padding: 10px;
+  display: block;
+  text-align: center;
+  margin: 10px;
+  width: 40vw;
+  color: #171810;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s ease;
+}
 
-  a:hover {
-    color: #03FA6E;
-    background-color: #171810;
-    transform: scale(1.05);
-  }
+a:hover {
+  color: #03FA6E;
+  background-color: #171810;
+  transform: scale(1.05);
+}
 </style>

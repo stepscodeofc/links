@@ -1,27 +1,21 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro"
 import Links from "../components/Links.astro"
-import { targetExternal, relExternal, targetInternal, relInternal } from "../components/Links.astro"
+import '../styles/Listas.css'
 
 const pageTitle = "Steps Code"
 
-const linkGitHub = "https://github.com/stepscodeofc"
-const iconGitHub = "fab fa-github"
-
-const linkInstagram = "https://instagram.com/steps.code"
-const iconInstagram = "fab fa-instagram"
-
-const linkWork = "/work"
-const iconWork = "fas fa-code"
+const allLinks = await Astro.glob("../pages/links/*.md")
 ---
 <BaseLayout pageTitle={pageTitle}>
   <img src="LogoSemFundo.png" width="200" alt="Logo">
   <h1>{pageTitle}</h1>
   <h2>Desenvolvedor Full-Stack</h2>
   <p>Bem vindo!</p>
-  <Links target={targetExternal} rel={relExternal} link={linkGitHub} icon={iconGitHub}>GitHub</Links>
-  <Links target={targetExternal} rel={relExternal} link={linkInstagram} icon={iconInstagram}>Instagram</Links>
-  <Links target={targetInternal} rel={relInternal} link={linkWork} icon={iconWork}>Trabalhos</Links>
+  <ul>
+    <li>{allLinks.filter((link) => link.frontmatter.tag === "social").map((link) => (<Links target={link.frontmatter.target} rel={link.frontmatter.rel} link={link.frontmatter.link}  icon={link.frontmatter.icon} title={link.frontmatter.title} />))}</li>
+    <li>{allLinks.filter((link) => link.frontmatter.title === "Trabalhos").map((link) => (<Links target={link.frontmatter.target} rel={link.frontmatter.rel} link={link.frontmatter.link}  icon={link.frontmatter.icon} title={link.frontmatter.title} />))}</li>
+  </ul>
 </BaseLayout>
 
 <style>
