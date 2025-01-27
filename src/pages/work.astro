@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro"
+import Links from "../components/Links.astro"
+import { targetExternal, relExternal, targetInternal, relInternal } from "../components/Links.astro"
+
+const pageTitle = "Meu Trabalho"
+
+const linkIndex = "/"
+const iconIndex = "fas fa-home"
+const styleIndex = "width: min-content"
+---
+<BaseLayout pageTitle={pageTitle}>
+  <Links target={targetInternal} rel={relInternal} link={linkIndex} style={styleIndex} icon={iconIndex}></Links>
+  <h1>{pageTitle}</h1>
+  <h2>Explore-os:</h2>
+</BaseLayout>

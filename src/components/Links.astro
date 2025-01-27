@@ -1,5 +1,5 @@
 ---
-const { target, rel, link, icon } = Astro.props
+const { target, rel, link, icon, style } = Astro.props
 
 export const targetExternal = "_blank"
 export const relExternal = "noopener"
@@ -8,7 +8,7 @@ export const targetInternal = "_parent"
 export const relInternal = "self"
 ---
 
-<a target={target} rel={rel} href={link}><i class={icon}></i> <slot/></a>
+<a target={target} rel={rel} href={link} style={style}><i class={icon}></i> <slot/></a>
 
 <style>
   a {
