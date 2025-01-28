@@ -10,7 +10,7 @@ Criei meu Linktree, que fornece acesso aos links para o meu Instagram, GitHub e 
 Completo!
 
 ## 📌 Link:
-<a href="https://mylinktree-nu.vercel.app/">CLIQUE AQUI</a>
+<a href="https://links-xi-five.vercel.app/">CLIQUE AQUI</a>
 
 ## 🔍 Comandos
 
